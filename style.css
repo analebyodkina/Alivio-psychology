@@ -36,6 +36,11 @@ body {
     font-family: var(--font-main);
     color: var(--color-text-dark);      
 }
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 .wrapper {
     max-width: 1920px;
     margin-inline: auto;
@@ -43,6 +48,7 @@ body {
 .container {
     max-width: 1507px;
     margin-inline: auto;
+    
 }
 /* header */
 
@@ -50,11 +56,11 @@ body {
     padding: 28px 68px;
     border-bottom: 1px solid var(--color-gray-light);
 }
-.header__container {
+.header__container, .story-section__container, .product-section__container{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    gap: 10px;
 }
 .header__logo {
     font-family: var(--font-logo);
@@ -69,8 +75,7 @@ body {
     gap: 72px;
 }
 .header__burger, .header__ul .material-symbols-outlined {
-    display: none;
-    
+    display: none;    
 }
 .header__a {
     font-family: var(--font-main);
@@ -94,9 +99,11 @@ body {
     line-height: 25px;
     font-weight: 400;
     color: var(--color-white);
+    transition: var(--transition);
 }
 .btn:hover {
     background: var(--color-primary-add);
+    border: var;
 }
 .header__btn-link {
     font-weight: 400;
@@ -107,11 +114,196 @@ body {
 .header__a:hover, .header__btn-link:hover {
     color: var(--color-primary-main);
 }
+.main-section {
+    height: calc(100vh - 110px);
+    display: flex;
+    gap: 10px;
+    justify-content: space-between; 
+    padding: 0 62px;   
+    margin-bottom: 169px;
+}
+.main-section__info, .story-section__info {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;     
+}
+.main-section__title {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 98px;
+    color: var(--color-primary-main);
+    max-width: 443px;
+    margin-bottom: 10px;
+}
+.main-section__desc, .product-section__desc {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    color: var(--color-text);
+    max-width: 420px;
+    margin-bottom: 53px;
+}
+.main-section__btn, .story-section__btn {
+    align-self: flex-start;   
+}
+.main-section__bg {
+    height: 100%;
+}
+.how-section {
+    margin-bottom: 393px;
+    padding-left: 53px;
+}
+
+.how-section__title {
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 157%;
+    color: var(--color-text-light);
+}
+.how-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 80px;
+    padding: 0 10px;
+}
+.how-section__slogan, .story-section__title, .product-section__slogan {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 157%;
+    color: var(--color-primary-main);
+    max-width: 579px;
+}
+.how-section__desc {
+    font-family: var(--font-main);    
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--color-text-light);
+    max-width: 670px;
+}
+.how-section__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 61px;
+}
+.how-section .item {
+    display: flex;
+    flex-direction: column;
+    max-width: 390px;
+}
+.item__title { 
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 150%;    
+    color: var(--color-black);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+.item__desc {
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--color-text-light);
+    margin-bottom: 65px;
+    flex-grow: 1;
+}
+.item__img {    
+    border-radius: 12px;
+}
+.story-section {
+    padding: 0 15px;
+    background: var(--color-primary-add);
+    margin-bottom: 120px;
+}
+.story-section__container {
+    gap: 10px;
+}
+.story-section__title, .story-section__desc {
+    color: var(--color-white);
+}
+.story-section__desc, .product-section__title {
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 157%;
+}
+.story-section__desc {
+    padding: 33px 0 77px 0;
+}
+.story-section__video {
+    border-radius: 16.33px;
+    padding: 229px 0 176px 0;
+}
+.product-section {
+    padding: 0 15px 242px 15px;
+}
+.product-section__container {
+    justify-content: center;
+    gap: 86px;
+}
+.product-section__image {
+    max-width: 638px;
+}
+.product-section__info {
+    max-width: 573px;
+}
+.product-section__title {
+    margin-bottom: 10px;
+}
+.product-section__desc {
+    padding: 20px 0 60px 0;
+}
+
+
+@media screen and (max-width:1600px) {
+    .how-section__list {
+        gap: 20px;
+    }   
+    .how-section {
+        padding: 0 15px;
+    } 
+}
 @media screen and (max-width: 1200px){
     .header__auth {
         display: none;
     }
-    
+    .main-section {
+        height: auto;
+        flex-direction: column;
+        margin-inline: auto;
+        padding: 45px 10px;
+        margin-bottom: 50px;
+    }
+    .main-section__info {
+        align-items: center;
+    }
+    .main-section__title, .main-section__desc, .story-section__info {
+        max-width: 100%;
+    }
+    .how-section {
+        margin-bottom: 80px;
+    }
+    .main-section__btn, .story-section__btn {
+        align-self: center;
+    }    
+    .how-section__list {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+    .story-section__container, .product-section__container {
+        flex-direction: column;
+    }
+    .story-section__video,.story-section__info {
+        padding: 40px 0;
+    }    
 }
 @media screen and (max-width: 992px){
     .header {
@@ -127,6 +319,25 @@ body {
     .header__a {
         font-size: 14px;
         line-height: 18px;
+    }
+    .how-section__title, .story-section__title {
+        text-align: center;
+    }
+    .how-section__header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }    
+}
+@media screen and (max-width: 768px){
+    .how-section__list {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .story-section {
+        margin-bottom: 40px;
+    }
+    .product-section {
+        padding-bottom: 40px;
     }
 }
 @media screen and (max-width: 576px){
@@ -163,7 +374,12 @@ body {
         color: #fff;
         font-size: 20px;
         line-height: 26px;
+    }    
+    .main-section__info {
+        max-width: 330px;   
     }
-
-
+    .main-section__title, .how-section__slogan, .story-section__title, .product-section__slogan {
+        font-size: 30px;
+        line-height: 40px;
+    }
 }
