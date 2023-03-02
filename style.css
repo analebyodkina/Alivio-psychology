@@ -1,17 +1,12 @@
 @font-face {
     font-family: 'Lato';
-    src: url('fonts/lato-medium-webfont.woff2') format('woff2'),
-         url('fonts/lato-medium-webfont.woff') format('woff'),
-         url('fonts/Lato-Medium.ttf') format('ttf');
+    src: url('fonts/lato-medium-webfont.woff2') format('woff2');         
     font-weight: 500;
     font-style: normal;
-
 }
 @font-face {
     font-family: 'Lato';
-    src: url('fonts/lato-semibold-webfont.woff2') format('woff2'),
-         url('fonts/lato-semibold-webfont.woff') format('woff'),
-         url('fonts/Lato-Semibold.ttf') format('ttf');
+    src: url('fonts/lato-semibold-webfont.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
 }
@@ -273,31 +268,34 @@ img {
     padding: 229px 0 176px 0;
     position: relative;    
 }
-.story-section__video:active {
-    animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both normal;
-}
-@keyframes scale-down-center {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-}  
-.story-section__play {
-    border-radius: 50%;
-    max-width: 81px;
+.animista {
     position: absolute;
     top: 47%;
     left: 50%;
-    transform: translate(-50%); 
+    transform: translate(-50%);
+
+}
+.story-section__play {
+    border-radius: 50%;
+    max-width: 81px;
     transition: var(--transition);    
 }   
 .story-section__play:hover {
     box-shadow:var(--color-primary-add) 5px 5px 40px;    
 }
+.story-section__play:active {
+    animation: scale-down-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both normal;
+}
+@keyframes scale-down-center {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+  }
 
 /* product-section */
 
